@@ -1,0 +1,26 @@
+{% extends "ProjectWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container padding-20">
+    <div class="row">
+
+        {% for service in services %}
+
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{service.image.url}}" class="card-img-top service-img" alt="">
+                <div class="card-body">
+                    <h5 class="card-title service-title">{{service.title}}</h5>
+                    <p class="card-text">{{service.content}}</p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

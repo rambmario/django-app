@@ -25,7 +25,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
           data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
               <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'Home' %}">Home <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == '/services' %}active{% endif %}" href="{% url 'Services' %}">Services <span class="visually-hidden">(current)</span></a>
+              <a class="nav-link {% if request.path == '/services/' %}active{% endif %}" href="{% url 'Services' %}">Services <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == '/shop' %}active{% endif %}" href="{% url 'Shop' %}">Shop <span class="visually-hidden">(current)</span></a>
