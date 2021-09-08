@@ -9,3 +9,12 @@
 .padding-20 {
     padding-top: 20px;
 }
+
+.formContainer {
+    border: solid 1px #00529633 ;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 20px;
+}
+

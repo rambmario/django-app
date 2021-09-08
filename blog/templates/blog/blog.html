@@ -1,0 +1,44 @@
+{% extends "ProjectWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container padding-20">
+    <div class="row">
+
+        {% for post in posts %}
+
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% if post.image.url != null%}  {{post.image.url}} {% endif %}" class="card-img-top service-img" alt="">
+                <div class="card-body">
+                    <h5 class="card-title service-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content}}</p>
+                    <blockquote class="blockquote">
+                        <p></p>
+                        <footer class="blockquote-footer"> <cite title="Source Title">{{post.author}}</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <section>
+        <div style="width: 75%; margin: auto; text-align: center;">
+            Categories: 
+
+            {% for post in posts %}
+                {% for category in post.categories.all %}
+                   <a href="{% url 'category' category.id %}">{{category.name}}</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+                {% endfor %}    
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

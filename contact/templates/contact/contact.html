@@ -1,0 +1,23 @@
+{% extends "ProjectWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if "valid" in request.GET %}
+<div class="alert alert-success" role="alert">
+    The message has been sent successfully!
+</div>
+{% endif %}
+
+<div class="container formContainer">
+    <h1>Contact Form</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{form_contact.as_p}}
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock %}
