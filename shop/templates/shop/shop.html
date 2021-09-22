@@ -1,0 +1,42 @@
+{% extends "ProjectWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <!-- 2 columns -->
+    <div class="row row-cols-2">
+
+        <!-- left side contain products list -->
+        <div class="col-md-9"> 
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                {% for product in products %}
+                    <div class="col">
+                        <div class="card text-center" style="margin: 5px 5px;" >
+                            <img class="card-img-top" src="{{product.img.url}}" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">{{product.price}}&nbsp;$</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{% url 'cart:add' product.id %}" class="btn btn-success">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <!-- right side contain cart -->
+        <div class="col-md-3" style="float: right;">
+            
+            {% include "cart/widget.html" %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

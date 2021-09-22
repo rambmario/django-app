@@ -40,7 +40,7 @@
               <a class="nav-link {% if request.path == '/services/' %}active{% endif %}" href="{% url 'Services' %}">Services <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == '/shop' %}active{% endif %}" href="{% url 'Shop' %}">Shop <span class="visually-hidden">(current)</span></a>
+              <a class="nav-link {% if request.path == '/shop/' %}active{% endif %}" href="{% url 'Shop' %}">Shop <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path|slice:':6' == '/blog/' %}active{% endif %}" href="{% url 'Blog' %}">Blog <span class="visually-hidden">(current)</span></a>
